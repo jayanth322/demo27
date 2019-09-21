@@ -4,9 +4,9 @@ node{
 }
     stage('Compile-Package'){
 
-         def mvnHome = tool name: 'maven', type: 'maven' 
+         def mvnHome = tool name: 'maven_home', type: 'maven' 
          sh "${mvnHome}/bin/mvn package"
-	 sh 'cp target/*.war /opt/k8s-lab/myweb-0.0.5.war'
+	 sh 'cp target/*.war /opt/k8s-lab/myweb-0.0.5.war'maven_home
   } 
     
     stage('Build Docker image'){
